@@ -1,0 +1,29 @@
+{
+    "menu": {
+        "home": "Home",
+        "deals": "Deals",
+        "account": "Account"
+    },
+    "home": {
+        "title": "Keep Flag Happy",
+        "description": "Sign up and start getting deals!"
+    },
+    "deals": {
+        "title": "Deals",
+        "description": "View and edit deals and store locations."
+    },
+    "coupon": {
+        "title": "Coupon creator",
+        "description": "Create a coupon for patrons to show to receive a discount.",
+        "time": "When is this deal valid?",
+        "preview": "Preview of how this deal will display to customers:"
+    },
+    "location": {
+        "title": "Location settings",
+        "description": "Add your bar or restaurant location."
+    },
+    "account": {
+        "title": "Account",
+        "description": "View and change your account information."
+    }
+}

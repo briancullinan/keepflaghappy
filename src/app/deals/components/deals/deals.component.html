@@ -1,0 +1,55 @@
+<h1 class="title"
+    [innerText]="'deals.description' | translate"></h1>
+
+<div>
+    <div class="job-row">
+        <div><a mat-raised-button color="primary" routerLink="1">View</a></div>
+        <p>Happy Hour Drink Special - 1/2 off for ladies<br />
+            <small>SouthSide Tavern</small></p>
+        <span>Expires - never</span>
+    </div>
+    <div class="job-row">
+        <div><a mat-raised-button color="primary" routerLink="1">View</a></div>
+        <p>Ladies Night! - ladies drink free<br />
+            <small>The Annex Cocktail Lounge</small></p>
+        <span>5 PM - 7 PM</span>
+    </div>
+    <div class="job-row">
+        <div><a mat-raised-button color="primary" routerLink="1">View</a></div>
+        <p>WaPo Special! - 1/2 for all public servants / social studies majors<br />
+            <small>The Mayor</small></p>
+        <span>5 PM - 9 PM</span>
+    </div>
+    <a mat-raised-button color="primary">New coupon</a>
+</div>
+
+<h1 class="title"
+    [innerText]="'Locations you manage'"></h1>
+
+<div>
+    <div class="job-row">
+        <div><a mat-raised-button color="primary" (click)="removeConfirmation()">Remove</a></div>
+        <p>SouthSide Tavern<br />
+            <small>117 S San Francisco St</small></p>
+        <span>1 deal</span>
+    </div>
+    <div class="job-row">
+        <div><a mat-raised-button color="primary" (click)="removeConfirmation()">Remove</a></div>
+        <p>Historic Brewing Barrel + Bottle House<br />
+            <small>110 S San Francisco St</small></p>
+        <span>3 deals</span>
+    </div>
+    <div class="job-row">
+        <div><a mat-raised-button color="primary" (click)="removeConfirmation()">Remove</a></div>
+        <p>The Annex Cocktail Lounge<br />
+            <small>50 S San Francisco St</small></p>
+        <span>2 deals</span>
+    </div>
+    <div class="job-row">
+        <div><a mat-raised-button color="primary" (click)="removeConfirmation()">Remove</a></div>
+        <p>The Mayor<br />
+            <small>409 S San Francisco St</small></p>
+        <span>4 deals</span>
+    </div>
+    <a mat-raised-button color="primary" routerLink="request">Add location</a>
+</div>
