@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatCheckboxModule, MatSidenavModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatRadioModule } from '@angular/material';
+import { MatCheckboxModule, MatSidenavModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatRadioModule, MatSelectModule, MatOptionModule } from '@angular/material';
 
 export const MATERIALS = [
     MatCheckboxModule,
@@ -9,7 +9,9 @@ export const MATERIALS = [
     MatSidenavModule,
     MatInputModule,
     MatFormFieldModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule,
+    MatOptionModule
 ]
 
 @NgModule({

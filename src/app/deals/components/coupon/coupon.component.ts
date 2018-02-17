@@ -8,9 +8,27 @@ import { MenuService } from '../../../menu/menu.service';
     styleUrls: ['./coupon.component.scss']
 })
 export class CouponComponent implements OnInit {
-    @Input() zoom: number = 4;
-    @Input() lat: number = 51.678418;
-    @Input() lng: number = 7.809007;
+    @Input() title = "Altitudes Bar and Grill Daily Special";
+    @Input() layout = 1;
+    @Input() colors = "Blue sunset"
+    @Input() deals = [
+        "$3 draft pints",
+        "$2.50 draft PBR",
+        "$3.50 well drinks",
+        "$4 house wine"
+    ]
+    @Input() schedule = "dotw";
+    @Input() dotw = "Monday";
+
+    days = [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday'
+    ]
 
     colorSchemes: Array<string> = [
         'Blue sunset',
@@ -51,7 +69,18 @@ export class CouponComponent implements OnInit {
         'Inspirational and romantic',
         'Riverside London',
         'Black and bright orange',
-        'Indian fields'
+        'Indian fields',
+        'Jazz night',
+        'Bright and energetic',
+        'Earthy and natural',
+        'Czech architecture',
+        'Blue accent',
+        'Kaleidoscope illusions',
+        'Winter barn',
+        'Bright and fruity',
+        'Purple garlic',
+        'The colors of nature',
+        'Oriental opulence'
     ]
 
     constructor(public menuService: MenuService) { }
@@ -61,4 +90,7 @@ export class CouponComponent implements OnInit {
         this.menuService.menuTitle.next('coupon.title');
     }
 
+    getSpan(d) {
+        return d.replace(/(\$[0-9\.]+)/ig, '<span>$1</span>')
+    }
 }

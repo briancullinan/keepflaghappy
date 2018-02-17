@@ -14,7 +14,7 @@
     },
     "coupon": {
         "title": "Coupon creator",
-        "description": "Create a coupon for patrons to show to receive a discount.",
+        "description": "Create a happy hour deal for patrons to show for.",
         "time": "When is this deal valid?",
         "preview": "Preview of how this deal will display to customers:"
     },

@@ -1,6 +1,11 @@
 <h1 class="title"
     [innerText]="'coupon.description' | translate"></h1>
-<mat-radio-group class="layouts">
+
+<mat-form-field>
+    <input matInput [(ngModel)]="title" placeholder="Title, location, name" />
+</mat-form-field>
+<h2>Select a layout</h2>
+<mat-radio-group class="layouts" [(ngModel)]="layout">
     <mat-radio-button value="1">Single<br />
         <div class="layout-icon single">
             <span> </span>
@@ -23,8 +28,9 @@
     </mat-radio-button>
 </mat-radio-group>
 
-<mat-radio-group class="colors">
-    <mat-radio-button *ngFor="let s of colorSchemes" value="1">{{ s }}<br />
+<h2>Select a color theme</h2>
+<mat-radio-group class="colors" [(ngModel)]="colors">
+    <mat-radio-button *ngFor="let s of colorSchemes" [value]="s">{{ s }}<br />
         <div class="color-harmony">
             <span> </span>
             <span> </span>
@@ -34,13 +40,47 @@
         </div>
     </mat-radio-button>
 </mat-radio-group>
-    
+
+<h2>Enter a description</h2>
+<mat-form-field *ngFor="let d of deals; let i = index">
+    <input matInput [(ngModel)]="deals[i]" [value]="d" />
+</mat-form-field>
+
 <h1 class="title"
     [innerText]="'coupon.time' | translate"></h1>
+
+<mat-form-field>
+    <mat-select matInput [(ngModel)]="schedule">
+        <mat-option value="dotw">Weekly</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-radio-group class="days" [(ngModel)]="dotw">
+    <mat-radio-button *ngFor="let day of days" [value]="day">{{ day }}</mat-radio-button>
+</mat-radio-group>
 
 <h1 class="title"
     [innerText]="'coupon.preview' | translate"></h1>
 
+<div class="previews">
+    <div class="preview">
+        <h3>{{ dotw }}</h3>
+        <div class="description" [innerHtml]="getSpan(deals[0])"></div>
+        <small>{{ title }}</small>
+    </div>
+    <div class="preview">
+        <h3>{{ dotw }}</h3>
+        <div class="description" [innerHtml]="getSpan(deals[1])"></div>
+        <small>{{ title }}</small>
+    </div>
+    <div class="preview">
+        <h3>{{ dotw }}</h3>
+        <div class="description" [innerHtml]="getSpan(deals[2])"></div>
+        <small>{{ title }}</small>
+    </div>
+</div>
+<br />
+<br />
 <a mat-raised-button color="primary">Publish</a>
 <a mat-raised-button color="primary">Share on Facebook</a>
 <a mat-raised-button color="primary">Share on Twitter</a>
