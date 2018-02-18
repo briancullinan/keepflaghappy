@@ -10,9 +10,5 @@ export const HomeRoutes: Routes = [
     {
         path: 'deals',
         loadChildren: './app/deals/deals.module#DealsModule'
-    },
-    {
-        path: 'inbox',
-        loadChildren: './app/inbox/inbox.module#InboxModule'
     }
 ];

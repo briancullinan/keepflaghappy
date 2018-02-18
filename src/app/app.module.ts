@@ -8,7 +8,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Config } from './common/index';
 import { AppComponent } from './app.component';
 import { SHARED_MODULES, COMPONENT_DECLARATIONS, COMPONENT_EXPORTS } from './app.common';
-import { ContainerComponent } from './shared/container/container.component';
 import { MenuService } from './menu/menu.service';
 
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
@@ -34,9 +33,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         }),
         ...SHARED_MODULES
     ],
-    providers: [
-        MenuService
-    ],
+    providers: [],
     bootstrap: [
         ...COMPONENT_EXPORTS
     ]

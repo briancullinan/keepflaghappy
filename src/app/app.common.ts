@@ -3,19 +3,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 import { MenuModule } from './menu/menu.module';
 import { AppComponent } from './app.component';
-import { ContainerComponent } from './shared/container/container.component';
 import { SharedModule } from './shared';
 
 export const SHARED_MODULES: any[] = [
     AppRoutingModule,
+    SharedModule.forRoot(),
     HomeModule,
     MenuModule,
-    SharedModule
 ];
 
 export const COMPONENT_DECLARATIONS: any[] = [
-    AppComponent,
-    ContainerComponent
+    AppComponent
 ];
 
 export const COMPONENT_EXPORTS: any[] = [

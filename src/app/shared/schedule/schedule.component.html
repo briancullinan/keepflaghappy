@@ -1,0 +1,60 @@
+<mat-form-field>
+    <mat-select placeholder="Select dates" matInput [(ngModel)]="schedule">
+        <mat-option value="any day">Everyday / any day</mat-option>
+        <mat-option value="dotw">Weekly</mat-option>
+        <mat-option value="specific dates">Specific dates</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<div class="days" *ngIf="schedule == 'dotw'">
+    <mat-checkbox *ngFor="let day of days; let i = index" [(ngModel)]="dotw[i]">{{ day }}</mat-checkbox>
+</div>
+
+<div class="specific-dates" *ngIf="schedule == 'specific dates'">
+    <mat-form-field>
+        <input matInput [matDatepicker]="startPicker" placeholder="Choose a start date">
+        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+        <mat-datepicker #startPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="endPicker" placeholder="Choose a end date">
+        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+    </mat-form-field>
+</div>
+
+<br />
+<mat-form-field>
+    <mat-select placeholder="Select time range" matInput [(ngModel)]="time">
+        <mat-option value="all day">All day / any time</mat-option>
+        <mat-option value="between">Between two times</mat-option>
+        <mat-option value="specific times">Specific times</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<div class="specific-dates" *ngIf="time == 'between'">
+    <mat-form-field>
+        <input matInput atp-time-picker value="19:00" placeholder="Choose a start time"/>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput atp-time-picker value="19:00" placeholder="Choose a end time"/>
+    </mat-form-field>
+</div>
+    
+<div class="exact-times" *ngIf="time == 'specific times'">
+    <div class="day-labels">
+        <div><span>&nbsp;</span></div>
+        <div class="day-row" *ngFor="let d of getDays(); let i = index">
+            <span>{{ d }}</span>
+        </div>
+    </div>
+    <div class="day-boxes">
+        <header>
+            <span *ngFor="let t of times; let j = index">{{ t }}</span>
+        </header>
+        <div class="day-row" *ngFor="let d of getDays(); let i = index">
+            <mat-checkbox *ngFor="let t of times; let j = index" [ngModel]="getTime(i, j)" (ngModelChange)="setTime(i, j, $event)"></mat-checkbox>
+        </div>
+    </div>
+</div>

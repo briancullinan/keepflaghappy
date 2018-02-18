@@ -18,10 +18,13 @@
         ]
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "node_modules/material-time-control/src/material-time-control.module.ts",
+        "node_modules/material-time-control/src/time-control/index.ts",
+        "node_modules/material-time-control/src/time-control/**/*.component.ts",
     ],
     "exclude": [
         "node_modules",
-        "**/*.spec.ts"
+        "**/*.spec.ts",
     ]
 }

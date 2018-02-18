@@ -1,0 +1,56 @@
+
+mat-radio-group, .days {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+mat-radio-button, mat-checkbox {
+    flex-basis:33.33%;
+}
+
+mat-form-field {
+    width:100%;
+}
+
+.specific-dates {
+    display:flex;
+}
+
+.specific-dates mat-form-field {
+    flex-basis: 50%;
+    width:auto;
+}
+
+.exact-times {
+    display:flex;
+}
+
+.day-labels {
+    flex-basis: 100px;
+}
+
+header span {
+    width:50px;
+    display:inline-block;
+}
+
+header span:nth-of-type(1),
+header span:nth-of-type(25) {
+    width:100px;
+}
+
+.day-boxes {
+    width:100%;
+    min-height:300px;
+    overflow:auto;
+    overflow-y: visible;
+    overflow-x: auto;
+}
+
+.exact-times header {
+    width:100%;
+}
+
+.day-row, header {
+    white-space: nowrap
+}

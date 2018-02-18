@@ -1,0 +1,11 @@
+<mat-radio-group class="colors" [(ngModel)]="colors">
+    <mat-radio-button *ngFor="let s of colorSchemes" [value]="s">{{ s }}<br />
+        <div class="color-harmony">
+            <span> </span>
+            <span> </span>
+            <span> </span>
+            <span> </span>
+            <span> </span>
+        </div>
+    </mat-radio-button>
+</mat-radio-group>

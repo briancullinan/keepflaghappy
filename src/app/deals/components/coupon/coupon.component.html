@@ -5,7 +5,7 @@
     <input matInput [(ngModel)]="title" placeholder="Title, location, name" />
 </mat-form-field>
 <h2>Select a layout</h2>
-<mat-radio-group class="layouts" [(ngModel)]="layout">
+<mat-radio-group class="layouts" [(ngModel)]="layout" (change)="emptyDeals()">
     <mat-radio-button value="1">Single<br />
         <div class="layout-icon single">
             <span> </span>
@@ -29,17 +29,7 @@
 </mat-radio-group>
 
 <h2>Select a color theme</h2>
-<mat-radio-group class="colors" [(ngModel)]="colors">
-    <mat-radio-button *ngFor="let s of colorSchemes" [value]="s">{{ s }}<br />
-        <div class="color-harmony">
-            <span> </span>
-            <span> </span>
-            <span> </span>
-            <span> </span>
-            <span> </span>
-        </div>
-    </mat-radio-button>
-</mat-radio-group>
+<seed-colors></seed-colors>
 
 <h2>Enter a description</h2>
 <mat-form-field *ngFor="let d of deals; let i = index">
@@ -49,15 +39,7 @@
 <h1 class="title"
     [innerText]="'coupon.time' | translate"></h1>
 
-<mat-form-field>
-    <mat-select matInput [(ngModel)]="schedule">
-        <mat-option value="dotw">Weekly</mat-option>
-    </mat-select>
-</mat-form-field>
-
-<mat-radio-group class="days" [(ngModel)]="dotw">
-    <mat-radio-button *ngFor="let day of days" [value]="day">{{ day }}</mat-radio-button>
-</mat-radio-group>
+<seed-schedule></seed-schedule>
 
 <h1 class="title"
     [innerText]="'coupon.preview' | translate"></h1>
