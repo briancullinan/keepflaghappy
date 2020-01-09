@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ScheduleComponent {
     @Input() schedule = "dotw";
-    @Input() time = "specific times";
+    @Input() time = "between";
     @Input() dotw = [];
     @Input() totd = [];
 

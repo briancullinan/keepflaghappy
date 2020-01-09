@@ -1,11 +1,14 @@
 <mat-radio-group class="colors" [(ngModel)]="colors">
-    <mat-radio-button *ngFor="let s of colorSchemes" [value]="s">{{ s }}<br />
+    <mat-radio-button *ngFor="let s of colorSchemes; let i = index" [class.visible]="more || colors == s || defaultSchemes.includes(s)" [value]="s">{{ s }}<br />
         <div class="color-harmony">
-            <span> </span>
-            <span> </span>
-            <span> </span>
-            <span> </span>
-            <span> </span>
+            <span [style.background-color]="colorValues[i][0]"> </span>
+            <span [style.background-color]="colorValues[i][1]"> </span>
+            <span [style.background-color]="colorValues[i][2]"> </span>
+            <span [style.background-color]="colorValues[i][3]"> </span>
+            <span [style.background-color]="colorValues[i][4]"> </span>
         </div>
     </mat-radio-button>
 </mat-radio-group>
+<br />
+<button *ngIf="!more" (click)="more=true" mat-raised-button color="primary">Show all</button>
+<button *ngIf="more" (click)="more=false" mat-raised-button color="primary">Hide all</button>

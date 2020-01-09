@@ -29,13 +29,16 @@ mat-form-field {
     flex-basis: 100px;
 }
 
-header span {
+header span, .day-row mat-checkbox {
     width:50px;
     display:inline-block;
+    text-align: center;
 }
 
 header span:nth-of-type(1),
-header span:nth-of-type(25) {
+header span:nth-of-type(25),
+.day-row mat-checkbox:nth-of-type(1),
+.day-row mat-checkbox:nth-of-type(25) {
     width:100px;
 }
 

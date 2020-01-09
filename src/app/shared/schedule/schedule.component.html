@@ -1,6 +1,6 @@
 <mat-form-field>
     <mat-select placeholder="Select dates" matInput [(ngModel)]="schedule">
-        <mat-option value="any day">Everyday / any day</mat-option>
+        <mat-option value="any day">Every day / any day</mat-option>
         <mat-option value="dotw">Weekly</mat-option>
         <mat-option value="specific dates">Specific dates</mat-option>
     </mat-select>
@@ -29,7 +29,7 @@
     <mat-select placeholder="Select time range" matInput [(ngModel)]="time">
         <mat-option value="all day">All day / any time</mat-option>
         <mat-option value="between">Between two times</mat-option>
-        <mat-option value="specific times">Specific times</mat-option>
+        <mat-option value="specific times" [disabled]="schedule == 'any day'">Specific times</mat-option>
     </mat-select>
 </mat-form-field>
 

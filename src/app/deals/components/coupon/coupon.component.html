@@ -39,24 +39,24 @@
 <h1 class="title"
     [innerText]="'coupon.time' | translate"></h1>
 
-<seed-schedule></seed-schedule>
+<seed-schedule (change)="setTime($event)"></seed-schedule>
 
 <h1 class="title"
     [innerText]="'coupon.preview' | translate"></h1>
 
 <div class="previews">
     <div class="preview">
-        <h3>{{ dotw }}</h3>
+        <h3>{{ time }}</h3>
         <div class="description" [innerHtml]="getSpan(deals[0])"></div>
         <small>{{ title }}</small>
     </div>
     <div class="preview">
-        <h3>{{ dotw }}</h3>
+        <h3>{{ time }}</h3>
         <div class="description" [innerHtml]="getSpan(deals[1])"></div>
         <small>{{ title }}</small>
     </div>
     <div class="preview">
-        <h3>{{ dotw }}</h3>
+        <h3>{{ time }}</h3>
         <div class="description" [innerHtml]="getSpan(deals[2])"></div>
         <small>{{ title }}</small>
     </div>
@@ -66,3 +66,4 @@
 <a mat-raised-button color="primary">Publish</a>
 <a mat-raised-button color="primary">Share on Facebook</a>
 <a mat-raised-button color="primary">Share on Twitter</a>
+<button mat-button color="primary">Remove</button>

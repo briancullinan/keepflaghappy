@@ -8,14 +8,12 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Config } from './common/index';
 import { AppComponent } from './app.component';
 import { SHARED_MODULES, COMPONENT_DECLARATIONS, COMPONENT_EXPORTS } from './app.common';
-import { MenuService } from './menu/menu.service';
 
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(<any>http, './assets/i18n/', '.json');
 }
-
 
 @NgModule({
     declarations: [ 
